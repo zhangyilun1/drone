@@ -9,7 +9,9 @@ uint64_t getTimestamp()
 {
   timeval curtime;
   gettimeofday(&curtime, 0);
+
   unsigned long ts = (unsigned long) curtime.tv_sec;
+    TRACE("curtime : " + to_string(ts));
   // Allow to truncate
   ts *= 1000;
   ts += curtime.tv_usec / 1000;

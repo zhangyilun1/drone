@@ -578,7 +578,9 @@ void DataProcessor::getTaskInfo(const uint8_t* data, int length, Session* sessio
             gps.stc_alt = 289.872;
 
             WaypointInformation m_rtkhome_point;
-        
+            // double stc_lat = gps.stc_lat; // 纬度
+            // double stc_lon = gps.stc_lon; // 经度
+            // double stc_alt = gps.stc_alt; // 绝对海拔
             m_rtkhome_point.stc_x = gps.stc_lon;
 	        m_rtkhome_point.stc_y = gps.stc_lat;
 	        m_rtkhome_point.stc_z = gps.stc_alt;
@@ -1093,7 +1095,7 @@ vector<WaypointInformation> DataProcessor::GetSubmissionWaypoints(int submission
 				// //pop_Message::Getpop_Message()->signal_Show_Message(QString("杆塔数据异常！"), true, false);
 				// m_cruiseInterface.Cruise_Write_File(QDir::currentPath() + "/temp_initial_route.pcd", write_error_pcl_file());
 				return std::vector<WaypointInformation>();
-		        }
+		    }
 
 			RecPoint temprecPoint;
 			DatumPoint tmpdp;
